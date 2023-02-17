@@ -10,6 +10,14 @@ public class HeroAttribute {
         this.dexterity =  dexterity;
         this.intelligence = intelligence;
     }
+
+    public HeroAttribute addLevelAttribtues(HeroAttribute firstLevelAttribtue, HeroAttribute secondLevelAttribtue){
+        HeroAttribute sum = new HeroAttribute(0, 0, 0);
+        sum.setStrength(firstLevelAttribtue.getStrength() + secondLevelAttribtue.getStrength());
+        sum.setDexterity(firstLevelAttribtue.getDexterity() + secondLevelAttribtue.getDexterity());
+        sum.setIntelligence(firstLevelAttribtue.getIntelligence() + secondLevelAttribtue.getIntelligence());
+        return sum;
+    }
     public int getStrength() {
         return strength;
     }

@@ -24,15 +24,17 @@ public class Mage extends Hero{
     @Override
     void LevelUp() {
         this.level++;
-        this.LevelAttribtues.setStrength(this.LevelAttribtues.getStrength() + 1);
-        this.LevelAttribtues.setDexterity(this.LevelAttribtues.getDexterity() + 1);
-        this.LevelAttribtues.setIntelligence(this.LevelAttribtues.getIntelligence() + 5);
+        HeroAttribute MageAttribute = new HeroAttribute(1, 1, 5);
+        this.LevelAttribtues = this.LevelAttribtues.addLevelAttribtues(this.LevelAttribtues, MageAttribute);
+//        this.LevelAttribtues.setStrength(this.LevelAttribtues.getStrength() + 1);
+//        this.LevelAttribtues.setDexterity(this.LevelAttribtues.getDexterity() + 1);
+//        this.LevelAttribtues.setIntelligence(this.LevelAttribtues.getIntelligence() + 5);
 
     }
 
     @Override
     void equip(Weapon weapon) {
-        if(this.validWeapons.contains(weapon.weaponType)) {
+        if(this.validWeapons.contains(weapon.weaponType) && this.level >= weapon.getRequiredLevel()) {
             if (this.Equipment.get(Item.Slot.Weapon) == null) {
                 System.out.println("from put");
                 this.Equipment.put(Item.Slot.Weapon, weapon.getName());
@@ -46,17 +48,29 @@ public class Mage extends Hero{
     }
 
     @Override
-    void equip(Armor armor) {
-        if(this.getValidArmor().contains(armor.armorType)){
-            if(this.Equipment.get(armor.slot) == null) {
-                this.Equipment.put(armor.slot, String.valueOf(armor.armorType));
-            }else{
-                this.Equipment.replace(armor.slot, String.valueOf(armor.armorType));
+    void equip(Armor armor) throws InvalidArmorException {
+        System.out.println("here in equip");
+
+            if(this.getValidArmor().contains(armor.armorType) && this.getLevel() >= armor.getRequiredLevel()){
+                System.out.println("---> " + this.level);
+                if(this.Equipment.get(armor.slot) == null) {
+                    this.Equipment.put(armor.slot, String.valueOf(armor.armorType));
+                }else{
+                    System.out.println("here in else");
+                    this.Equipment.replace(armor.slot, String.valueOf(armor.armorType));
+                }
             }
-        }
-        else {
-            System.out.println("Error not right");
-        }
+            else {
+                if(this.getValidArmor().contains(armor.armorType) == false){
+                    throw new InvalidArmorException("Invalid armor type for our hero" + this.getName());
+                }
+                if(this.getLevel() < armor.getRequiredLevel()){
+                    System.out.println("Can't equip this armor because low level of our hero ");
+                    throw new InvalidArmorException("Can't equip this armor because low level of our hero " + this.getName());
+                }
+
+            }
+
     }
 
 }

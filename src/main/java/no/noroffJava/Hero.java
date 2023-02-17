@@ -20,7 +20,7 @@ public abstract class Hero {
 
     abstract void LevelUp();
     abstract void equip(Weapon weapon);
-    abstract void equip(Armor armor);
+    abstract void equip(Armor armor) throws InvalidArmorException;
 
     public void setValidWeapons(Weapon.WeaponType validWeapons) {
         this.validWeapons.add(validWeapons);
@@ -32,5 +32,13 @@ public abstract class Hero {
 
     public HashSet<Armor.ArmorType> getValidArmor() {
         return validArmor;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public String getName() {
+        return name;
     }
 }
