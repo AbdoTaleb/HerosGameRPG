@@ -17,7 +17,14 @@ public abstract class Hero {
     protected HashSet<Weapon.WeaponType> validWeapons = new HashSet<>();
     protected HashSet<Armor.ArmorType> validArmor = new HashSet<>();
 
+    /**
+     * Function to increase the hero level by 1, and increase the level attribute.
+     */
     abstract void levelUp();
+
+    /**
+     * Function to equip weapon and throws exception if something went wrong.
+     */
     public void equip(Weapon weapon) throws InvalidWeaponException{
         if(this.validWeapons.contains(weapon.weaponType) && this.level >= weapon.getRequiredLevel()) {
             if (this.Equipment.get(Item.Slot.Weapon) == null) {
@@ -36,6 +43,10 @@ public abstract class Hero {
             }
         }
     }
+
+    /**
+     * Function to equip armor and throws exception if something went wrong.
+     */
     public void equip(Armor armor) throws InvalidArmorException{
         if(this.getValidArmor().contains(armor.armorType) && this.getLevel() >= armor.getRequiredLevel()){
             if(this.Equipment.get(armor.slot) == null) {
@@ -57,9 +68,11 @@ public abstract class Hero {
         }
     }
 
+
+    /**
+     * Abstract Function to calculate the hero damage.
+     */
     abstract double heroDamage();
-
-
 
 
     public void setValidWeapons(Weapon.WeaponType validWeapons) {
@@ -95,6 +108,10 @@ public abstract class Hero {
         return validWeapons;
     }
 
+
+    /**
+     * Function to display information about the hero.
+     */
     public StringBuilder display(){
         StringBuilder heroInfo = new StringBuilder();
         heroInfo.append("Hero Name: ").append(this.getName()).append("\n").append("Hero Class: ").

@@ -11,6 +11,9 @@ public class HeroAttribute {
         this.intelligence = intelligence;
     }
 
+    /**
+     * Function to add two instance and return the sum.
+     */
     public HeroAttribute addLevelAttributes(HeroAttribute firstLevelAttribtue, HeroAttribute secondLevelAttribtue){
         HeroAttribute sum = new HeroAttribute(0, 0, 0);
         sum.setStrength(firstLevelAttribtue.getStrength() + secondLevelAttribtue.getStrength());

@@ -1,28 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="no.noroffJava.HeroTest" tests="22" skipped="0" failures="0" errors="0" timestamp="2023-02-19T19:47:28" hostname="DESKTOP-4DVTTSS" time="0.034">
+<testsuite name="no.noroffJava.HeroTest" tests="15" skipped="0" failures="0" errors="0" timestamp="2023-02-19T20:20:48" hostname="DESKTOP-4DVTTSS" time="0.032">
   <properties/>
-  <testcase name="testSetValidArmor()" classname="no.noroffJava.HeroTest" time="0.012"/>
-  <testcase name="equip_ValidWeapon_ReturnWeaponEqualsHeroWeapon()" classname="no.noroffJava.HeroTest" time="0.003"/>
+  <testcase name="equip_ValidWeapon_ReturnWeaponEqualsHeroWeapon()" classname="no.noroffJava.HeroTest" time="0.014"/>
   <testcase name="heroDamage_NoWeaponEquipped()" classname="no.noroffJava.HeroTest" time="0.002"/>
-  <testcase name="testSetValidWeapons()" classname="no.noroffJava.HeroTest" time="0.001"/>
-  <testcase name="setValidWeapons()" classname="no.noroffJava.HeroTest" time="0.001"/>
-  <testcase name="getLevel_shouldReturnHeroLevel()" classname="no.noroffJava.HeroTest" time="0.0"/>
-  <testcase name="testEquip()" classname="no.noroffJava.HeroTest" time="0.0"/>
+  <testcase name="getLevel_shouldReturnHeroLevel()" classname="no.noroffJava.HeroTest" time="0.001"/>
   <testcase name="getName_shouldReturnHeroName()" classname="no.noroffJava.HeroTest" time="0.0"/>
   <testcase name="testLevelUp()" classname="no.noroffJava.HeroTest" time="0.0"/>
   <testcase name="equip_InvalidLevel_ReturnInvalidWeaponException()" classname="no.noroffJava.HeroTest" time="0.002"/>
   <testcase name="equip_InvalidWeapon_ReturnInvalidWeaponException()" classname="no.noroffJava.HeroTest" time="0.001"/>
-  <testcase name="setValidArmor()" classname="no.noroffJava.HeroTest" time="0.0"/>
   <testcase name="getHeroWeapon_ReturnHeroWeapon()" classname="no.noroffJava.HeroTest" time="0.0"/>
-  <testcase name="setHeroWeapon_ReturnHeroWeapon()" classname="no.noroffJava.HeroTest" time="0.001"/>
+  <testcase name="setHeroWeapon_ReturnHeroWeapon()" classname="no.noroffJava.HeroTest" time="0.0"/>
   <testcase name="getValidArmor_ReturnSetOfValidArmor()" classname="no.noroffJava.HeroTest" time="0.001"/>
   <testcase name="equip_InvalidArmor_ReturnInvalidArmorException()" classname="no.noroffJava.HeroTest" time="0.001"/>
-  <testcase name="testEquip1()" classname="no.noroffJava.HeroTest" time="0.0"/>
-  <testcase name="testEquip2()" classname="no.noroffJava.HeroTest" time="0.001"/>
   <testcase name="heroDamage_WithWeaponEquipped()" classname="no.noroffJava.HeroTest" time="0.0"/>
   <testcase name="display()" classname="no.noroffJava.HeroTest" time="0.001"/>
   <testcase name="getValidWeapons_ReturnSetOfValidWeapon()" classname="no.noroffJava.HeroTest" time="0.0"/>
-  <testcase name="equip_InvalidLevel_ReturnInvalidArmorException()" classname="no.noroffJava.HeroTest" time="0.0"/>
+  <testcase name="equip_InvalidLevel_ReturnInvalidArmorException()" classname="no.noroffJava.HeroTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

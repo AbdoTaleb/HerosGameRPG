@@ -26,7 +26,7 @@ public abstract class Item {
         Weapon,
         Head,
         Body,
-        Legs;
+        Legs
 
     }
 
