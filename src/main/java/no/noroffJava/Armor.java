@@ -23,4 +23,14 @@ public class Armor extends Item{
         Plate
 
     }
+
+    // Use this function in testing to check if to instance of Weapon are equals
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Armor that = (Armor) o;
+        return this.getName() == that.getName() && this.armorType == that.armorType && this.getRequiredLevel() == that.getRequiredLevel() &&
+                this.slot == that.slot && this.armorAttribute == that.armorAttribute;
+    }
 }
