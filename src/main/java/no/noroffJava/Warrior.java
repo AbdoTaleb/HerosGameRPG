@@ -6,9 +6,9 @@ public class Warrior extends Hero{
 
         this.name = name;
         this.level = 1;
-        this.LevelAttribtues.setStrength(5);
-        this.LevelAttribtues.setDexterity(2);
-        this.LevelAttribtues.setIntelligence(1);
+        this.levelAttributes.setStrength(5);
+        this.levelAttributes.setDexterity(2);
+        this.levelAttributes.setIntelligence(1);
 
         this.setValidWeapons(Weapon.WeaponType.Axes);
         this.setValidWeapons(Weapon.WeaponType.Hammers);
@@ -24,19 +24,29 @@ public class Warrior extends Hero{
     }
 
     @Override
-    void LevelUp() {
+    void levelUp() {
         this.level++;
         HeroAttribute WarriorAttribute = new HeroAttribute(3, 2, 1);
-        this.LevelAttribtues = this.LevelAttribtues.addLevelAttribtues(this.LevelAttribtues, WarriorAttribute);
+        this.levelAttributes = this.levelAttributes.addLevelAttributes(this.levelAttributes, WarriorAttribute);
     }
 
     @Override
-    void equip(Weapon weapon) {
+    double heroDamage() {
+        double heroDamage = 0;
+        if(this.Equipment.get(Item.Slot.valueOf("Weapon")) == null){
+            heroDamage = 1 * (1 + this.totalAttributes.getIntelligence() / 100);
+        }else {
+            heroDamage = this.getHeroWeapon().getWeaponDamage() * (1 + ((double)this.totalAttributes.getStrength() / 100));
 
+        }
+        return heroDamage;
     }
 
     @Override
-    void equip(Armor armor) {
-
+    public String toString() {
+        return this.getName() + " " + this.getClass().getSimpleName() + " " + this.getLevel()
+                + " " + this.totalAttributes.getStrength() + " " + this.totalAttributes.getDexterity() + " " +
+                this.totalAttributes.getIntelligence() + " " + this.heroDamage();
     }
+
 }

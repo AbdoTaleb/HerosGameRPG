@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="no.noroffJava.HeroTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-02-17T16:21:37" hostname="DESKTOP-4DVTTSS" time="0.015">
+<testsuite name="no.noroffJava.HeroTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-02-19T13:25:49" hostname="DESKTOP-4DVTTSS" time="0.014">
   <properties/>
-  <testcase name="levelUp()" classname="no.noroffJava.HeroTest" time="0.015"/>
+  <testcase name="getHeroWeapon_ReturnHeroWeapon()" classname="no.noroffJava.HeroTest" time="0.014"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

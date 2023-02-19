@@ -4,8 +4,12 @@ package no.noroffJava;
 
 public class Weapon extends Item{
 
-    private int WeaponDamage;
-    public Weapon(){}
+    public void setWeaponDamage(double weaponDamage) {
+        this.weaponDamage = weaponDamage;
+    }
+
+    private double weaponDamage;
+
 
     Item.Slot slot;
     WeaponType weaponType;
@@ -13,14 +17,14 @@ public class Weapon extends Item{
         this.slot = Slot.Weapon;
         this.setName(name);
         this.setRequiredLevel(requiredLevel);
-        this.WeaponDamage = weaponDamage;
+        this.weaponDamage = weaponDamage;
         this.weaponType = Weapon.WeaponType.valueOf(weaponType);
 
 
     }
 
-    public int getWeaponDamage() {
-        return WeaponDamage;
+    public double getWeaponDamage() {
+        return weaponDamage;
     }
 
     enum WeaponType{
@@ -32,6 +36,17 @@ public class Weapon extends Item{
         Swords,
         Wands
 
+    }
+
+
+    // Use this function in testing to check if to instance of Weapon are equals
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Weapon that = (Weapon) o;
+        return this.getName() == that.getName() && this.weaponType == that.weaponType && this.weaponType == that.weaponType &&
+                this.slot == that.slot && this.weaponDamage == that.weaponDamage;
     }
 
 

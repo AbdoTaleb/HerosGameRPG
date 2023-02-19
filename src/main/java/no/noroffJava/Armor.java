@@ -1,7 +1,9 @@
 package no.noroffJava;
 
 public class Armor extends Item{
-    HeroAttribute ArmorAttribute;
+
+
+    HeroAttribute armorAttribute;
     ArmorType armorType;
 
     Item.Slot slot;
@@ -10,9 +12,8 @@ public class Armor extends Item{
         this.setRequiredLevel(requiredLevel);
         this.slot = Slot.valueOf(slot);
         this.armorType = ArmorType.valueOf(armorType);
-        this.ArmorAttribute = armorAttribute;
+        this.armorAttribute = armorAttribute;
     }
-
 
 
     enum ArmorType{

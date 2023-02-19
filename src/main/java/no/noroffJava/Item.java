@@ -1,5 +1,7 @@
 package no.noroffJava;
 
+
+
 public abstract class Item {
     private String Name;
     private int RequiredLevel;
@@ -24,7 +26,8 @@ public abstract class Item {
         Weapon,
         Head,
         Body,
-        Legs
+        Legs;
+
     }
 
 }

@@ -11,7 +11,7 @@ public class HeroAttribute {
         this.intelligence = intelligence;
     }
 
-    public HeroAttribute addLevelAttribtues(HeroAttribute firstLevelAttribtue, HeroAttribute secondLevelAttribtue){
+    public HeroAttribute addLevelAttributes(HeroAttribute firstLevelAttribtue, HeroAttribute secondLevelAttribtue){
         HeroAttribute sum = new HeroAttribute(0, 0, 0);
         sum.setStrength(firstLevelAttribtue.getStrength() + secondLevelAttribtue.getStrength());
         sum.setDexterity(firstLevelAttribtue.getDexterity() + secondLevelAttribtue.getDexterity());
