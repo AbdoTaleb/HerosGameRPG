@@ -243,16 +243,20 @@ class HeroTest {
     }
 
     @Test
-    void getValidWeapons() {
+    void getValidWeapons_ReturnSetOfValidWeapon() {
 
         // Arrange
-
-
+        // When crating a hero we add to the validWeapon Set the
+        // hero valid weapon. For Mage hero the valid weapon is ["Staffs", "Wands"]
+        HashSet<Weapon.WeaponType> expected = new HashSet<>();
+        expected.add(Weapon.WeaponType.Staffs);
+        expected.add((Weapon.WeaponType.Wands));
 
         // Act
-
+        HashSet<Weapon.WeaponType> actual = hero.getValidWeapons();
 
         // Assert
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -284,8 +288,6 @@ class HeroTest {
 
 
         // Assert
-
-        // assertTrue(expected.equals(actual));
 
         assertEquals(expected.toString(), actual.toString());
 

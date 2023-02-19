@@ -12,6 +12,8 @@ public class Main {
         hero.equip(a);
         hero.equip(w2);
 
+        System.out.println(hero.getValidWeapons());
+
 
         System.out.println(hero.display());
 

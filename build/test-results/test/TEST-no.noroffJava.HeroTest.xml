@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="no.noroffJava.HeroTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-02-19T14:34:51" hostname="DESKTOP-4DVTTSS" time="0.014">
+<testsuite name="no.noroffJava.HeroTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-02-19T17:32:11" hostname="DESKTOP-4DVTTSS" time="0.015">
   <properties/>
-  <testcase name="equip_ValidWeapon_ReturnWeaponEqualsHeroWeapon()" classname="no.noroffJava.HeroTest" time="0.014"/>
+  <testcase name="getValidWeapons()" classname="no.noroffJava.HeroTest" time="0.015"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
