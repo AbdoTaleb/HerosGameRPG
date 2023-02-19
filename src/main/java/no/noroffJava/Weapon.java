@@ -45,7 +45,7 @@ public class Weapon extends Item{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Weapon that = (Weapon) o;
-        return this.getName() == that.getName() && this.weaponType == that.weaponType && this.weaponType == that.weaponType &&
+        return this.getName() == that.getName() && this.getRequiredLevel() == that.getRequiredLevel() && this.weaponType == that.weaponType &&
                 this.slot == that.slot && this.weaponDamage == that.weaponDamage;
     }
 

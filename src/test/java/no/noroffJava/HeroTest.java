@@ -30,7 +30,7 @@ class HeroTest {
     }
 
     @Test
-    void equip_InvalidWeapon_ReturnInvalidWeaponException() throws InvalidWeaponException {
+    void equip_InvalidWeapon_ReturnInvalidWeaponException(){
 
         // Arrange
         // Send only 4 arguments because the slot is automatically sets to Weapon
@@ -41,6 +41,25 @@ class HeroTest {
         // Act
         InvalidWeaponException exception =
                 assertThrows(InvalidWeaponException.class, () -> hero.equip(weapon));
+
+
+        // Assert
+        assertEquals(expected, exception.getMessage());
+    }
+
+    @Test
+    void equip_InvalidArmor_ReturnInvalidArmorException(){
+
+        // Arrange
+        HeroAttribute armorAttribute = new HeroAttribute(1,1,5);
+        Armor armor =  new Armor("Common Leather", 1,
+                "Body", "Leather", armorAttribute);
+
+        String expected = "Invalid armor type for our hero " + hero.getName();
+
+        // Act
+        InvalidArmorException exception =
+                assertThrows(InvalidArmorException.class, () -> hero.equip(armor));
 
 
         // Assert
@@ -64,6 +83,28 @@ class HeroTest {
         // Assert
         assertEquals(expected, exception.getMessage());
     }
+
+    @Test
+    void equip_InvalidLevel_ReturnInvalidArmorException() throws InvalidWeaponException {
+
+        // Arrange
+        HeroAttribute armorAttribute = new HeroAttribute(1,1,5);
+        Armor armor =  new Armor("Common Cloth", 5,
+                "Body", "Cloth", armorAttribute);
+
+        String expected = "Can't equip this armor because low level of our hero " + hero.getName();
+
+        // Act
+        InvalidArmorException exception =
+                assertThrows(InvalidArmorException.class, () -> hero.equip(armor));
+
+
+        // Assert
+        assertEquals(expected, exception.getMessage());
+    }
+
+
+
 
     @Test
     void testEquip() {
@@ -95,16 +136,7 @@ class HeroTest {
         // Assert
     }
 
-    @Test
-    void getValidArmor() {
 
-        // Arrange
-
-
-        // Act
-
-        // Assert
-    }
 
     @Test
     void testLevelUp() {
@@ -193,15 +225,7 @@ class HeroTest {
         // Assert
     }
 
-    @Test
-    void testGetValidArmor() {
 
-        // Arrange
-
-        // Act
-
-        // Assert
-    }
 
     @Test
     void getLevel_shouldReturnHeroLevel() {
@@ -272,6 +296,23 @@ class HeroTest {
 
         // Act
         HashSet<Weapon.WeaponType> actual = hero.getValidWeapons();
+
+        // Assert
+        assertEquals(expected, actual);
+    }
+
+
+    @Test
+    void getValidArmor_ReturnSetOfValidArmor() {
+
+        // Arrange
+        // When crating a hero we add to the validArmor Set the
+        // hero valid armor. For Mage hero the valid armor is ["Cloth"]
+        HashSet<Armor.ArmorType> expected = new HashSet<>();
+        expected.add(Armor.ArmorType.Cloth);
+
+        // Act
+        HashSet<Armor.ArmorType> actual = hero.getValidArmor();
 
         // Assert
         assertEquals(expected, actual);

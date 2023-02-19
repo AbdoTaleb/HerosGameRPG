@@ -48,7 +48,7 @@ public abstract class Hero {
         }
         else {
             if(!this.getValidArmor().contains(armor.armorType)){
-                throw new InvalidArmorException("Invalid armor type for our hero" + this.getName());
+                throw new InvalidArmorException("Invalid armor type for our hero " + this.getName());
             }
             if(this.getLevel() < armor.getRequiredLevel()){
                 throw new InvalidArmorException("Can't equip this armor because low level of our hero " + this.getName());
