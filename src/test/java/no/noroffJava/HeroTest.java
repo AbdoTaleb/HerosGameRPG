@@ -247,19 +247,51 @@ class HeroTest {
 
         // Arrange
 
+
+
         // Act
+
 
         // Assert
     }
 
     @Test
-    void display() {
+    void display() throws InvalidWeaponException, InvalidArmorException {
 
         // Arrange
 
+        Weapon weapon = new Weapon("Common Axe", 1, "Staffs", 2 );
+        HeroAttribute armorAttribute = new HeroAttribute(1,1,5);
+        Armor armor =  new Armor("Common Cloth77", 1,
+                "Body", "Cloth", armorAttribute);
+
+        StringBuilder expected  = new StringBuilder();
+        expected.append("Hero Name: ").append("Mage").append("\n").append("Hero Class: ").
+                append("Mage").append("\n").append("Hero Level: ").append(1).
+                append("\n").append("Hero Strength: ").append(2).append("\n").
+                append("Hero Dexterity: ").append(2).append("\n").append("Hero Intelligence: ").
+                append(13).append("\n").append("Hero Damage: ").append(2.26);
+
+
+        hero.equip(weapon);
+        hero.equip(armor);
+
+
         // Act
+
+        StringBuilder actual = new StringBuilder();
+        actual = hero.display();
 
 
         // Assert
+
+        // assertTrue(expected.equals(actual));
+
+        assertEquals(expected.toString(), actual.toString());
+
     }
 }
+
+
+
+
