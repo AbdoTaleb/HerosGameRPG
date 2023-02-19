@@ -155,6 +155,24 @@ class HeroTest {
         assertEquals(expected, actual);
     }
 
+
+    @Test
+    void heroDamage_WithWeaponEquipped() throws InvalidWeaponException {
+
+        // Arrange
+        // creating weapon with damage 2
+        Weapon weapon = new Weapon("Common Axe", 1, "Staffs", 2 );
+        hero.equip(weapon);
+        // When creating the hero Mage the Intelligence will be initialized to 8.0 (double)
+        double expected = 2 * (1 + (8.0 / 100)); // This will be equal to 2.16
+
+        // Act
+        double actual = hero.heroDamage();
+
+        // Assert
+        assertEquals(expected, actual);
+    }
+
     @Test
     void testSetValidWeapons() {
 
