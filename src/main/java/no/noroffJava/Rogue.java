@@ -33,21 +33,14 @@ public class Rogue extends Hero{
 
     @Override
     double heroDamage() {
-        double heroDamage = 0;
+        double heroDamage;
         if(this.Equipment.get(Item.Slot.valueOf("Weapon")) == null){
-            heroDamage = 1 * (1 + this.totalAttributes.getIntelligence() / 100);
+            heroDamage = (1 + this.totalAttributes.getIntelligence() / 100);
         }else {
             heroDamage = this.getHeroWeapon().getWeaponDamage() * (1 + ((double)this.totalAttributes.getDexterity() / 100));
 
         }
         return heroDamage;
-    }
-
-    @Override
-    public String toString() {
-        return this.getName() + " " + this.getClass().getSimpleName() + " " + this.getLevel()
-                + " " + this.totalAttributes.getStrength() + " " + this.totalAttributes.getDexterity() + " " +
-                this.totalAttributes.getIntelligence() + " " + this.heroDamage();
     }
 
 }

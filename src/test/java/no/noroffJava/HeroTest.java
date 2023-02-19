@@ -67,7 +67,7 @@ class HeroTest {
     }
 
     @Test
-    void equip_InvalidLevel_ReturnInvalidWeaponException() throws InvalidWeaponException {
+    void equip_InvalidLevel_ReturnInvalidWeaponException(){
 
         // Arrange
         // Send only 4 arguments because the slot is automatically sets to Weapon
@@ -85,7 +85,7 @@ class HeroTest {
     }
 
     @Test
-    void equip_InvalidLevel_ReturnInvalidArmorException() throws InvalidWeaponException {
+    void equip_InvalidLevel_ReturnInvalidArmorException(){
 
         // Arrange
         HeroAttribute armorAttribute = new HeroAttribute(1,1,5);
@@ -104,81 +104,30 @@ class HeroTest {
     }
 
 
-
-
-    @Test
-    void testEquip() {
-
-        // Arrange
-
-        // Act
-
-        // Assert
-    }
-
-    @Test
-    void setValidWeapons() {
-
-        // Arrange
-
-        // Act
-
-        // Assert
-    }
-
-    @Test
-    void setValidArmor() {
-
-        // Arrange
-
-        // Act
-
-        // Assert
-    }
-
-
-
     @Test
     void testLevelUp() {
 
         // Arrange
         // All heroes start with level 1
-        int actual  = hero.getLevel(); // = 1
-
-        // Act
         // Increase the level by 1
+        int expected = 2; // 1 + 1 = 2
+
+        // Act
         hero.levelUp();
-        actual = hero.getLevel();
+        int actual = hero.getLevel();
 
         // Assert
-        assertEquals(2, actual);
+        assertEquals(expected, actual);
     }
 
-    @Test
-    void testEquip1() {
 
-        // Arrange
-
-        // Act
-
-        // Assert
-    }
-
-    @Test
-    void testEquip2() {
-
-        // Arrange
-
-        // Act
-
-        // Assert
-    }
 
     @Test
     void heroDamage_NoWeaponEquipped() {
 
         // Arrange
-        double expected = 1 * ((double) 1 + hero.totalAttributes.getIntelligence() / 100);
+        // Hero Mage total Intelligence start at 8
+        double expected = 1 * ((double) 1 + 8 / 100);
 
         // Act
         double actual = hero.heroDamage();
@@ -204,28 +153,6 @@ class HeroTest {
         // Assert
         assertEquals(expected, actual);
     }
-
-    @Test
-    void testSetValidWeapons() {
-
-        // Arrange
-
-        // Act
-
-        // Assert
-    }
-
-    @Test
-    void testSetValidArmor() {
-
-        // Arrange
-
-        // Act
-
-        // Assert
-    }
-
-
 
     @Test
     void getLevel_shouldReturnHeroLevel() {
@@ -325,7 +252,7 @@ class HeroTest {
 
         Weapon weapon = new Weapon("Common Axe", 1, "Staffs", 2 );
         HeroAttribute armorAttribute = new HeroAttribute(1,1,5);
-        Armor armor =  new Armor("Common Cloth77", 1,
+        Armor armor =  new Armor("Common Cloth", 1,
                 "Body", "Cloth", armorAttribute);
 
         StringBuilder expected  = new StringBuilder();
@@ -342,7 +269,7 @@ class HeroTest {
 
         // Act
 
-        StringBuilder actual = new StringBuilder();
+        StringBuilder actual;
         actual = hero.display();
 
 

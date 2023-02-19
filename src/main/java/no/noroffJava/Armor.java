@@ -1,5 +1,7 @@
 package no.noroffJava;
 
+import java.util.Objects;
+
 public class Armor extends Item{
 
 
@@ -7,6 +9,7 @@ public class Armor extends Item{
     ArmorType armorType;
 
     Item.Slot slot;
+    // Constructor takes five argument when creating a new armor to initialize its value
     public Armor(String name, int requiredLevel, String slot, String armorType, HeroAttribute armorAttribute){
         this.setName(name);
         this.setRequiredLevel(requiredLevel);
@@ -24,13 +27,5 @@ public class Armor extends Item{
 
     }
 
-    // Use this function in testing to check if to instance of Weapon are equals
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Armor that = (Armor) o;
-        return this.getName() == that.getName() && this.armorType == that.armorType && this.getRequiredLevel() == that.getRequiredLevel() &&
-                this.slot == that.slot && this.armorAttribute == that.armorAttribute;
-    }
+
 }
